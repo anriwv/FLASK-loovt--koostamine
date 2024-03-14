@@ -1,0 +1,121 @@
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Helvetica, sans-serif;
+    background-color: rgb(225, 255, 127);
+}
+
+.konteiner {
+    padding: 20px;
+    background-color: #52595e6c;
+}
+
+
+/* idee - youtube, blog */
+/* raami osa - https://www.ko-it.ee/blog  --> 'inspect element' */
+.ruudustik {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr)); /* veerg */
+    grid-template-rows: repeat(auto-fill, minmax(100px, auto)); 
+    grid-gap: 20px; 
+}
+
+.kast {
+    height: 100px;
+    width: 200px;
+    background-color: #f0f0f0;
+    background-size: cover;
+    background-position: center; 
+    border: 5px solid #000000;
+    border-radius: 20px; 
+    padding: 30px; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+/* 
+https://stackoverflow.com/questions/4919076/outline-effect-to-text#4919231  
+*/
+.kast h3{
+    color: #ffffff;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+
+
+/* Külgriba */
+.riba {
+    height: 400px;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    text-align: center;
+}
+
+.riba ul {
+    padding: 0;
+    margin: 0;
+}
+
+.riba ul li {
+    padding: 10px;
+    display: block; 
+}
+
+.riba ul li a {
+    color: rgb(252, 250, 255);
+    text-decoration: none;
+    font-size: larger;
+}
+
+.riba ul li a:hover {
+    background-color: #ff0af3;
+}
+
+h2 {
+    color: #000000;
+    background-color: #7aebfa;
+}
+
+input[type="text"] {
+    padding: 5px;
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+
+
+/* https://getcssscan.com/css-buttons-examples */
+button {
+    font-size: large;
+    margin: 3px;
+    padding: 2px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    color: #000000;
+    background-color: #ffffff9a;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+.button:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+.kustuta {
+    background-color: #f06e57;
+    color: #fff;
+}
+

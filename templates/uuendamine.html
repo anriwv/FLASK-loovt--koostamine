@@ -1,0 +1,27 @@
+{% extends 'baas.html' %}
+{% block title %}Uuenda{% endblock %}
+
+{% block content %}
+    <h1>Uuenda dommen</h1>
+
+    <form action="{{ url_for('uuendamine', domeeni_id=domeen.id) }}" method="POST">
+        <label for="domeen">Domeeni nimi:</label>
+        <input type="text" name="uus_domeeni_nimi" value="{{ domeen.domeen }}" required>
+        <br>
+
+        <label for="r_nimi">Riigi nimi:</label>
+        <input type="text" name="r_nimi" value="{{ domeen.r_nimi }}">
+        <br>
+
+        <label for="r_teine_nimi">Riigi inglise keelne nimi:</label>
+        <input type="text" name="r_teine_nimi" value="{{ domeen.r_teine_nimi }}">
+        <br>
+
+        <label for="lipp_url">Lipu URL:</label>
+        <input type="text" name="lipp_url" value="{{ domeen.lipp_url }}">
+        <br>
+        
+        <button type="submit">Kinnita</button>
+    </form>
+
+{% endblock %}

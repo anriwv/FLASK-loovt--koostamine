@@ -1,0 +1,18 @@
+{% extends 'baas.html' %}
+{% block title %} TERE! {% endblock %}
+
+{% block content %}
+    <h2>Otsingutulemused riigi kohta: {{ nimi }}</h2>
+    <ul>
+        {% for objekt in otsing %}
+
+            <li>
+                <div class="kast" style="background-image: url('{{ objekt.lipp_url }}')"></div>
+                <h3>{{ objekt.domeen }}</h3>
+                <p> Nimi: {{ objekt.r_nimi }}</p>
+                <p> Teine nimi: {{ objekt.r_teine_nimi }}</p>
+            </li>
+
+        {% endfor %}
+    </ul>
+{% endblock %}

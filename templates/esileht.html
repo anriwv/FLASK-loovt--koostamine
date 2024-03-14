@@ -1,0 +1,26 @@
+{% extends 'baas.html' %}
+{% block title %} Domeenid {% endblock %}
+
+{% block content %}
+    <h2>Koik domeenid</h2>
+    <div class="ruudustik">
+        {% for domeen in koik_domeenid %}
+
+
+            <!--kui domeen on riigi jaoks nt. .ee, siis naitakse selle lippu voi halli pilti. 
+                Kui domeen pole riigi jaoks nt. .com, .org jne siis naitakse abstraktse pilti-->
+            {% if domeen.kas_on_r_domeen == 0 %}
+                <div class="kast" style="background-image: url('{{ url_for('static', filename='pilt.png') }}')">
+                    <h3>{{ domeen.domeen }}</h3>
+                </div>
+
+            {% else %}
+                <div class="kast" style="background-image: url('{{ domeen.lipp_url }}')">
+                    <h3>{{ domeen.domeen }}</h3>
+                </div>
+            {% endif %}
+
+
+        {% endfor %}
+    </div>
+{% endblock %}

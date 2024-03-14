@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <div class="riba">
+        <h2> Lehe kaart </h2>
+        <ul>
+            <li><a href="{{ url_for('otsing') }}">Otsi</a></li>
+            <li><a href="{{ url_for('ava') }}">AVALEHT</a></li>
+            <li><a href="{{ url_for('lisa_domeen') }}">Lisa domeen</a></li>
+            <li><a href="{{ url_for('uuenda__domeen') }}">Uuenda domeen</a></li>
+        </ul>
+    </div>
+
+    <h1>Domeenid </h1>
+    <div class="konteiner">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>
+
+

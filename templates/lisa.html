@@ -1,0 +1,25 @@
+{% extends 'baas.html' %}
+{% block title %}Lisa domeen{% endblock %}
+
+{% block content %}
+    <h2>Lisa domeen</h2>
+    <form action="{{ url_for('lisa_domeen') }}" method="POST">
+        <label for="domeen">Domeeni nimi:</label>
+        <input type="text" name="domeen" required>
+        <br>
+
+        <label for="r_nimi">Riigi nimi:</label>
+        <input type="text"  name="r_nimi">
+        <br>
+
+        <label for="r_teine_nimi">Riigi inglise keelne nimi:</label>
+        <input type="text" name="r_teine_nimi">
+        <br>
+
+        <label for="lipp_url">Lippu URL:</label>
+        <input type="text" name="lipp_url">
+        <br>
+        
+        <button type="submit">Lisa Domeen</button>
+    </form>
+{% endblock %}

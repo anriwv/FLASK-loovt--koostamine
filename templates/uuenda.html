@@ -1,0 +1,22 @@
+{% extends 'baas.html' %}
+{% block title %}Uuenda{% endblock %}
+
+{% block content %}
+    <h2>Uuenda domeen</h2>
+    <ul>
+        {% for domeen in koik_domeenid %}
+
+            <li>
+                {{ domeen.domeen }}
+                <form action="{{ url_for('uuendamine', domeeni_id=domeen.id) }}" method="GET" style="display: inline;">
+                    <button type="submit">Uuenda</button>
+                </form>
+                
+                <form action="{{ url_for('kustutamine', domeeni_id=domeen.id) }}" method="POST" style="display: inline;">
+                    <button type="submit" class="kustuta">Kustuta</button>
+                </form>
+            </li>
+
+        {% endfor %}
+    </ul>
+{% endblock %}

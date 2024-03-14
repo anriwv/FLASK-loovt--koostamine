@@ -1,0 +1,27 @@
+{% extends 'baas.html' %}
+{% block title %} Otsi domeeni {% endblock %}
+
+{% block content %}
+<form action="/otsi" method="POST">
+    <label>domeeni nimi:</label>
+    <input type='text' name='domeen'>
+    <br>
+
+    <label for="o_tuup">Tüüp:</label>
+    <select name="o_tuup">
+        <option value="1">riigi domeen</option>
+        <option value="0">pole riigi domeen</option>
+    </select>
+    <br>
+
+    <label>Riigi nimi:</label>
+    <input type='text' name='r_nimi'>
+    <br>
+
+    <label>Riigi teine nimi:</label>
+    <input type='text' name='teine_nimi'>
+    <br>
+
+    <button type="submit">Otsi</button>
+</form>
+{% endblock %}

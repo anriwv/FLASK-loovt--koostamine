@@ -1,0 +1,31 @@
+{% extends 'baas.html' %}
+{% block title %} Otsingu tulemused {% endblock %}
+
+{% block content %}
+    <h2>Otsingu tulemused</h2>
+
+    {% if tulemused %}
+        {% for tulemus in tulemused %}
+            <ul>
+                <li>{{ tulemus.domeen }}</li>
+                
+                {% if tulemus.kas_on_r_domeen %}
+                    <li>Riigi domeen</li>
+                {% else %}
+                    <li>Pole riigi domeen</li>
+                {% endif %}
+
+                {% if tulemus.lipp_url %}
+                    <li>{{ tulemus.r_nimi }}</li>
+                    <li>{{ tulemus.r_teine_nimi }}</li>
+                    <li>lipp on</li>
+                    <div class="kast" style="background-image: url('{{ tulemus.lipp_url }}')"></div>
+                {% endif %}
+
+            </ul>
+        {% endfor %}
+        
+    {% else %}
+        <p>Ei leitud tulemusi vastavalt antud otsingule.</p>
+    {% endif %}
+{% endblock %}
